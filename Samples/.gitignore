@@ -1,0 +1,30 @@
+# =============== #
+# Unity generated #
+# =============== #
+Temp/
+build/
+Packages/
+
+Library/metadata
+LibraryPlayerDataCache
+Library/ScriptAssemblies
+Library/ShaderCache
+
+# ===================== #
+# Unity build generated #
+# ===================== #
+Mono/
+Temp/
+*.exe
+*.dll
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
