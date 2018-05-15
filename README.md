@@ -6,7 +6,7 @@ Examples that demonstrate Unity game integration with some of the libraries and 
 ### AmfUnityPlugin
 AmfUnityPlugin is a plugin using the Advanced Media Framework (AMF) SDK for hardware accelerated video and audio playback on AMD GPUs in Unity. Two modes of operation are supported with this example: normal video playback and 360 video playback(mono and stereoscopic).  For audio, the plugin supports ambisonic sound. Information and instructions for this plugin is included in a README file and also in the .cs script documentation.
 
-Requirements:
+### Requirements:
 * [Same as AMF](https://github.com/GPUOpen-LibrariesAndSDKs/AMF) 
 * Unity(https://store.unity.com/download?ref=personal)
 * Git
