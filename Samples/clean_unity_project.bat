@@ -27,4 +27,8 @@ rmdir /S /Q ShaderCache
 
 del assetDatabase3
 
-cd curDir
+cd ../Assets
+::clear plugins
+rmdir /S /Q Plugins
+
+cd %curDir%

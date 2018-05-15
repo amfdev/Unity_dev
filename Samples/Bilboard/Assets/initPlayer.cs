@@ -17,7 +17,7 @@ public class initPlayer : MonoBehaviour {
 		else
 		{
 			string path = Application.dataPath;
-			player.url = path + "../../../../default.mp4";
+			player.url = path + "../../../../../default.mp4";
 		}
 
 		player.Play();

@@ -12,4 +12,7 @@ cd ..\UnityIntegrations\AmfUnityPlugin\source\AMF\amf\public\samples
 cd ..\..\..\..\..\
 %msbuild% AmfUnityPlugin.sln /property:Configuration=Release /property:Platform=x64 /p:PlatformToolset=%toolset% /m
 
+cd %curDir%\AMFUnityPlugin
+call makeDist.cmd
+
 cd %curDir%
