@@ -51,7 +51,8 @@ if exist "%dlldir%" (
 	)
 )
 
-copy %curDir%\AmfUnityPlugin.cs %dist%
+::copy %curDir%\AmfUnityPlugin.cs %dist%
+:: copy %curDir%\Amf360UnityPlugin.cs %dist%
 
 cd %curDir%
 

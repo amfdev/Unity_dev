@@ -17,4 +17,6 @@ call build_unity_project.bat SkySphere
 call dist2Proj.cmd SkySphere_AMF
 call build_unity_project.bat SkySphere_AMF
 
+call dist2Proj.cmd SkySphere_AMF
+call build_unity_project.bat MultySceneSample
 cd %curDir%

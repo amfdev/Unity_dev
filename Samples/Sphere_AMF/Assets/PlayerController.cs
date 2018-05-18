@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
 		else
 		{
 			string path = Application.dataPath;
-			file = path + "../../../../../default.mp4";
+			file = "D:/dima/test_assets/360_4k.mp4";//path + "../../../../../default.mp4";
 		}
 		Amf360UnityPlugin script = renderObject.GetComponent("Amf360UnityPlugin").GetComponent<Amf360UnityPlugin>();
 		script.setFile(file);

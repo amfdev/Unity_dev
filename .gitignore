@@ -1,2 +1,3 @@
 *.buildreport
-Plugins.meta
+*.meta
+*.vs

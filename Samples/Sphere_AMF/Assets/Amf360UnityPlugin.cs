@@ -136,7 +136,8 @@ public class Amf360UnityPlugin : MonoBehaviour
     // Public variables
     public bool mute;
     public bool isAmbisonic;
-    public Material eye;
+    public Material leftEye;
+    public Material rightEye;
     [Tooltip("Left/Right")]
     public VideoFormat StereoFormat;
     public enum VideoFormat
@@ -147,7 +148,8 @@ public class Amf360UnityPlugin : MonoBehaviour
         OverUnderLT,
         OverUnderRT
     };
-    public string eyeLayer;
+    public string LeftEyeLayer;
+    public string RightEyeLayer;
     public bool MaterialOptimization;
 
 
@@ -284,7 +286,18 @@ public class Amf360UnityPlugin : MonoBehaviour
         SetTextureFromUnity(uniqueID, videoTexture.GetNativeTexturePtr(), videoTexture.width, videoTexture.height);
 
         // Set up materials for left and right eyes
-        eye.mainTexture = videoTexture;
+        leftEye.mainTexture = videoTexture;
+        if (MaterialOptimization)
+        {
+            if (StereoFormat != VideoFormat.Mono)
+            {
+                rightEye.mainTexture = videoTexture;
+            }
+        } else
+        {
+            rightEye.mainTexture = videoTexture;
+        }
+        
 
         switch (StereoFormat)
         {
@@ -293,8 +306,8 @@ public class Amf360UnityPlugin : MonoBehaviour
 
                 if (MaterialOptimization)
                 {
-                    eye.SetTextureOffset("_MainTex", new Vector2(1, 1));
-                    eye.SetTextureScale("_MainTex", new Vector2(-1, -1));
+                    leftEye.SetTextureOffset("_MainTex", new Vector2(1, 1));
+                    leftEye.SetTextureScale("_MainTex", new Vector2(-1, -1));
 
                     // Set right camera to see left side, switch off right material
                     // Get right camera eye
@@ -302,35 +315,53 @@ public class Amf360UnityPlugin : MonoBehaviour
 
                     foreach(Camera eyeCam in stereoScopicCameras)
                     {
-                        eyeCam.cullingMask = 1 << LayerMask.NameToLayer(eyeLayer);
+                        if (eyeCam.cullingMask == 1 << LayerMask.NameToLayer(RightEyeLayer))
+                        {
+                            eyeCam.cullingMask = 1 << LayerMask.NameToLayer(LeftEyeLayer);
+                        }
                     }
                 }
                 else
                 {
-                    eye.SetTextureOffset("_MainTex", new Vector2(1, 1));
-                    eye.SetTextureScale("_MainTex", new Vector2(-1, -1));
+                    leftEye.SetTextureOffset("_MainTex", new Vector2(1, 1));
+                    leftEye.SetTextureScale("_MainTex", new Vector2(-1, -1));
+
+                    rightEye.SetTextureOffset("_MainTex", new Vector2(1, 1));
+                    rightEye.SetTextureScale("_MainTex", new Vector2(-1, -1));
                 }
 
                 break;
             // Left eye on left
             case (VideoFormat.SideBySideLF):
-                eye.SetTextureOffset("_MainTex", new Vector2(0.5f, 1));
-                eye.SetTextureScale("_MainTex", new Vector2(-0.5f, -1));
+                leftEye.SetTextureOffset("_MainTex", new Vector2(0.5f, 1));
+                leftEye.SetTextureScale("_MainTex", new Vector2(-0.5f, -1));
+
+                rightEye.SetTextureOffset("_MainTex", new Vector2(1, 1));
+                rightEye.SetTextureScale("_MainTex", new Vector2(-0.5f, -1));
                 break;
             // Left eye on right
             case (VideoFormat.SideBySideRF):
-                eye.SetTextureOffset("_MainTex", new Vector2(1, 1));
-                eye.SetTextureScale("_MainTex", new Vector2(-0.5f, -1));
+                leftEye.SetTextureOffset("_MainTex", new Vector2(1, 1));
+                leftEye.SetTextureScale("_MainTex", new Vector2(-0.5f, -1));
+
+                rightEye.SetTextureOffset("_MainTex", new Vector2(0.5f, 1));
+                rightEye.SetTextureScale("_MainTex", new Vector2(-0.5f, -1));
                 break;
             // Left eye on Top
             case (VideoFormat.OverUnderLT):
-                eye.SetTextureOffset("_MainTex", new Vector2(1, 0.5f));
-                eye.SetTextureScale("_MainTex", new Vector2(-1, -0.5f));
+                leftEye.SetTextureOffset("_MainTex", new Vector2(1, 0.5f));
+                leftEye.SetTextureScale("_MainTex", new Vector2(-1, -0.5f));
+
+                rightEye.SetTextureOffset("_MainTex", new Vector2(1, 1));
+                rightEye.SetTextureScale("_MainTex", new Vector2(-1, -0.5f));
                 break;
             // Left eye on Bottom
             case (VideoFormat.OverUnderRT):
-                eye.SetTextureOffset("_MainTex", new Vector2(1, 1));
-                eye.SetTextureScale("_MainTex", new Vector2(-1, -0.5f));
+                leftEye.SetTextureOffset("_MainTex", new Vector2(1, 1));
+                leftEye.SetTextureScale("_MainTex", new Vector2(-1, -0.5f));
+
+                rightEye.SetTextureOffset("_MainTex", new Vector2(1, 0.5f));
+                rightEye.SetTextureScale("_MainTex", new Vector2(-1, -0.5f));
                 break;
         }
     }
@@ -406,11 +437,6 @@ public class Amf360UnityPlugin : MonoBehaviour
                 audioSource.Play();
             } 
         }
-    }
-
-    void OnApplicationFocus(bool hasFocus)
-    {
-        HandlePause(!hasFocus);
     }
 
     void OnApplicationPause(bool pauseStatus)
