@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 222625394189845382}
   - component: {fileID: 114048177981206798}
   - component: {fileID: 114532723179042404}
-  - component: {fileID: 114684192021474322}
+  - component: {fileID: 114708975178578086}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114684192021474322}
+      - m_Target: {fileID: 114708975178578086}
         m_MethodName: LoadBilboard
         m_Mode: 1
         m_Arguments:
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
---- !u!114 &114684192021474322
+--- !u!114 &114708975178578086
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417431412335056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4b94f53916bc2e40903c89ec67ff5b1, type: 3}
+  m_Script: {fileID: 11500000, guid: d177561bfd58e95409802aac7dc8e53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!222 &222197148669484296
@@ -270,8 +270,8 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224851471175936156

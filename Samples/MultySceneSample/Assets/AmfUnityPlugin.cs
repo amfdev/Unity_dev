@@ -126,7 +126,7 @@ public class AmfUnityPlugin : MonoBehaviour
 			PipelineExecute(uniqueID, "notacmd");
 			PipelineDestroy(uniqueID);
 		}
-		uniqueID = GetUniqueID();
+        uniqueID = GetUniqueID();
 		//
 		PipelineCreate(uniqueID);
 
@@ -190,8 +190,8 @@ public class AmfUnityPlugin : MonoBehaviour
 		// Set texture onto our material
 		GetComponent<Renderer>().material.mainTexture = tex;
 
-		// Pass texture pointer to the plugin
-		SetTextureFromUnity(uniqueID, tex.GetNativeTexturePtr(), tex.width, tex.height);
+        // Pass texture pointer to the plugin
+        SetTextureFromUnity(uniqueID, tex.GetNativeTexturePtr(), tex.width, tex.height);
 	}
 
 	private IEnumerator CallPluginAtEndOfFrames()

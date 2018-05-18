@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 114650840393368644}
   - component: {fileID: 114041104652222916}
   - component: {fileID: 114439889181874812}
-  - component: {fileID: 114793136680041724}
+  - component: {fileID: 114638301970157432}
   m_Layer: 5
   m_Name: MetricsInfo
   m_TagString: Untagged
@@ -332,6 +332,20 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114638301970157432
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1479565176083314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b57b87e56a37c774cba89ffbc354301a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controllerHolder: {fileID: 0}
+  _text: {fileID: 114646267302086842}
+  _helpText: {fileID: 114162241010266058}
 --- !u!114 &114646267302086842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -408,20 +422,6 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
---- !u!114 &114793136680041724
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1479565176083314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b2b0b9fc27463348931cc140e6abe12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _controllerHolder: {fileID: 0}
-  _text: {fileID: 114164020370474278}
-  _helpText: {fileID: 114162241010266058}
 --- !u!114 &114928847847815670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114793136680041724}
+      - m_Target: {fileID: 0}
         m_MethodName: SwitchRenderMode
         m_Mode: 1
         m_Arguments:

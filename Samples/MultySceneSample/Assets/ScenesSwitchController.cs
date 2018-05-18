@@ -16,6 +16,6 @@ public class ScenesSwitchController : MonoBehaviour {
 	}
 
     public void LoadBilboard() {
-        SceneManager.LoadScene("Bilboard");
+        SceneManager.LoadScene("Bilboard", LoadSceneMode.Single);
     }
 }
