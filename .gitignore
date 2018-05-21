@@ -1,3 +1,11 @@
 *.buildreport
 *.vs
 *.csproj
+Bin/
+Samples/*/Library/metadata*
+Samples/*/Library/PlayerDataCache*
+Samples/*/Library/ScriptAssemblies*
+Samples/*/Library/ShaderCache*
+*assetDatabase3
+Samples/*/Assets/Plugins*
+Samples/*/obj*

@@ -18,4 +18,20 @@ public class ScenesSwitchController : MonoBehaviour {
     public void LoadBilboard() {
         SceneManager.LoadScene("Bilboard", LoadSceneMode.Single);
     }
+    public void LoadSphere()
+    {
+        SceneManager.LoadScene("Sphere", LoadSceneMode.Single);
+    }
+    public void LoadSkySphere()
+    {
+        SceneManager.LoadScene("SkySphere", LoadSceneMode.Single);
+    }
+    public void Load2Eyes()
+    {
+        //SceneManager.LoadScene("2Eyes", LoadSceneMode.Single);
+    }
+    public void LoadMain()
+    {
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
+    }
 }

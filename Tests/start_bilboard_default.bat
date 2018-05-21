@@ -1,2 +1,2 @@
 set curDir=%cd%
-%curDir%/../Samples/build/Bilboard_AMF/win64/Bilboard_AMF.exe
+%curDir%/../Samples/build/Bilboard/win64/Bilboard.exe

@@ -28,14 +28,27 @@ public class DataManager : MonoBehaviour
                 _360videoList.Add(args[i + 1]);
             }
         }
-        if (_videoList.Count < 1)
-        {
-            string path = Application.dataPath;
-            _videoList.Add(path + "../../../../../default.mp4");
-        }
-            
+        
 
-        printValues(_text);
+        if (_videoList.Count < 1 && _360videoList.Count < 1)
+        {
+            //string path = Application.dataPath;
+            //_videoList.Add(path + "../../../../../default.mp4");
+            //_360videoList.Add(path + "../../../../../default.mp4");
+            _videoList.Add("D:/Work/test_assets/video.mp4");
+            _360videoList.Add("D:/Work/test_assets/360.mp4");
+        }
+        else if (_360videoList.Count < 1)
+        {
+            _360videoList.Add(_videoList[0]);
+        }
+        else
+        {
+            _videoList.Add(_360videoList[0]);
+        }
+
+
+        PrintValues(_text);
     }
 
     void Awake()
@@ -52,7 +65,7 @@ public class DataManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    public void printValues(Text text)
+    public void PrintValues(Text text)
     {
         if (text)
         {

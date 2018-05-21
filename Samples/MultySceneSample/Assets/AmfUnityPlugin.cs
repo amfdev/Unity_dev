@@ -118,7 +118,7 @@ public class AmfUnityPlugin : MonoBehaviour
         }
     }
 
-    public void setFile(string file)
+    public void SetFile(string file)
     {
 		if (uniqueID != 0) {
 			PipelineExecute(uniqueID, "stop");
@@ -155,6 +155,7 @@ public class AmfUnityPlugin : MonoBehaviour
 		{
 			print("Failed to initialize pipeline\n");
 		}
+
 		StartCoroutine("CallPluginAtEndOfFrames");
     }
 

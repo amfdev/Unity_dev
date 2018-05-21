@@ -1,17 +1,17 @@
 ﻿using UnityEngine.UI;
 
-
-public class BilboardController : ISceneController{
-    // Update is called once per frame
+public class SphereController : ISceneController
+{
 
     public Text _text;
     public PlayerController _controller;
 
     public RenderMode _renderMode;
 
-    void Update () {
-		
-	}
+    void Update()
+    {
+
+    }
 
     public override void SetRenderMode(RenderMode mode)
     {
@@ -27,9 +27,9 @@ public class BilboardController : ISceneController{
     {
         _text.text = "";
         DataManager.instance.PrintValues(_text);
-        if (DataManager.instance._videoList.Count > 0)
+        if (DataManager.instance._360videoList.Count > 0)
         {
-            _controller.Play(DataManager.instance._videoList[0], GetRenderMode());
+            _controller.Play(DataManager.instance._360videoList[0], GetRenderMode());
         }
     }
     void Start()
@@ -37,4 +37,3 @@ public class BilboardController : ISceneController{
         Play();
     }
 }
- 

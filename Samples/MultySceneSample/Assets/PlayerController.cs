@@ -17,7 +17,9 @@ public class PlayerController : MonoBehaviour {
         else
         {
             player.Stop();
-            amfPlayer.setFile(file);
+            Material mat = gameObject.GetComponent<MeshRenderer>().materials[0];
+            mat.SetTextureScale("_MainTex", new Vector2(-1, -1));
+            amfPlayer.SetFile(file);
         }
     }
 
