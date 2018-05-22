@@ -10,9 +10,26 @@ public class PlayerController : MonoBehaviour {
         if (mode == RenderMode.Unity)
         {
             amfPlayer.Stop();
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            if (!audioSource)
+                audioSource = gameObject.AddComponent<AudioSource>();
+            audioSource.volume = 1.0f;
+            audioSource.spatialBlend = 1.0f;
+            audioSource.ignoreListenerVolume = false;
+            audioSource.loop = true;
+            audioSource.maxDistance = 10;
 
             player.url = file;
+            player.Prepare();
+
+            player.audioOutputMode = UnityEngine.Video.VideoAudioOutputMode.AudioSource;
+            player.SetTargetAudioSource(0, audioSource);
+            player.EnableAudioTrack(0, true);
+            player.controlledAudioTrackCount = 1;
+
+            player.Stop();
             player.Play();
+            audioSource.Play();
         }
         else
         {

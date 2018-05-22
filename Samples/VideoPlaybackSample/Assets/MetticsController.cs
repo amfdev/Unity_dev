@@ -24,8 +24,7 @@ public class MetticsController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _sceneController = _controllerHolder.GetComponent<ISceneController>();
-        _helpText.text = "Click on <b>\"Switch\"</b> to change render engine\n" +
-                         "Press <b>Ctrl</b> to toggle mouse control\n" +
+        _helpText.text = "Press <b>Ctrl</b> to toggle mouse control\n" +
                          "Press <b>AWSD</b> to move\n" +
                          "<b>Arrows</b> to rotate camera\n";
         if (_sceneController.GetRenderMode() == RenderMode.AMF)

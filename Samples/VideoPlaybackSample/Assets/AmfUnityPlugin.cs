@@ -229,7 +229,7 @@ public class AmfUnityPlugin : MonoBehaviour
 		audioSource.ignoreListenerVolume = false;
 		audioSource.loop = true;
 		audioSource.clip = audioClip;
-		audioSource.maxDistance = 10;
+		audioSource.maxDistance = 500;
 		audioSource.Play();
 	}
 
