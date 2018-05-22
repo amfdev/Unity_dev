@@ -12,11 +12,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Bilboard.unity
     guid: 347cbec8e0b857b489b5148d3aa36e3f
   - enabled: 1
+    path: Assets/Scenes/BilboardAMF.unity
+    guid: 953e68ed325962a4998f5b63c28f5b22
+  - enabled: 1
     path: Assets/Scenes/Sphere.unity
     guid: aff1cfdf98d423c44969c25b16a4d60b
   - enabled: 1
+    path: Assets/Scenes/SphereAMF.unity
+    guid: e5469c38f7e321243b3ad5d67a116b45
+  - enabled: 1
     path: Assets/Scenes/SkySphere.unity
     guid: efdd00e4ac47740498a961d61fdc2870
+  - enabled: 1
+    path: Assets/Scenes/SkySphereAMF.unity
+    guid: 3361e60cf47e2f643868a75ee203c8ed
   - enabled: 1
     path: Assets/Scenes/2Eyes.unity
     guid: c986973e7a0e77c4697ded8346e5b9d9

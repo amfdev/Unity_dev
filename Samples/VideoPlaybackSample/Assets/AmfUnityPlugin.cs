@@ -146,7 +146,7 @@ public class AmfUnityPlugin : MonoBehaviour
 			playAudio = (PipelineQuery(uniqueID, "hasAudio") > 0.0f);
 			if (playAudio)
 			{
-				CreateAudio();
+				SetUpAudio();
 			}
 			//
 			avState = AVState.kPlay;
@@ -190,6 +190,7 @@ public class AmfUnityPlugin : MonoBehaviour
 
 		// Set texture onto our material
 		GetComponent<Renderer>().material.mainTexture = tex;
+        GetComponent<Renderer>().material.mainTextureScale = new Vector2(1.0f, -1.0f);
 
         // Pass texture pointer to the plugin
         SetTextureFromUnity(uniqueID, tex.GetNativeTexturePtr(), tex.width, tex.height);
@@ -210,7 +211,7 @@ public class AmfUnityPlugin : MonoBehaviour
 		}
 	}
 
-	private void CreateAudio()
+	private void SetUpAudio()
 	{
 		// Query the audio setup of the video
 		samplerate = (int) PipelineQuery(uniqueID, "sampleRate");
@@ -220,8 +221,10 @@ public class AmfUnityPlugin : MonoBehaviour
 		audioClip =
 			 AudioClip.Create("StreamingAudio", samplerate * channels * 10, channels, samplerate, true);
 		// Create audio source
-		audioSource = gameObject.AddComponent<AudioSource>();
-		audioSource.volume = 1.0f;
+		audioSource = gameObject.GetComponent<AudioSource>();
+        if (!audioSource)
+            audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.volume = 1.0f;
 		audioSource.spatialBlend = 1.0f;
 		audioSource.ignoreListenerVolume = false;
 		audioSource.loop = true;

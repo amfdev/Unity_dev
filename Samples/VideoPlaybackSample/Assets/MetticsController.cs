@@ -28,6 +28,14 @@ public class MetticsController : MonoBehaviour {
                          "Press <b>Ctrl</b> to toggle mouse control\n" +
                          "Press <b>AWSD</b> to move\n" +
                          "<b>Arrows</b> to rotate camera\n";
+        if (_sceneController.GetRenderMode() == RenderMode.AMF)
+        {
+            _text.text = "AMF";
+        }
+        else
+        {
+            _text.text = "Unity";
+        }
     }
 	
 	// Update is called once per frame
