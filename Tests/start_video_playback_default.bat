@@ -1,0 +1,1 @@
+%cd%/../Bin/VideoPlaybackSample/win64/VideoPlaybackSample.exe

@@ -1,14 +1,9 @@
 set curDir=%cd%
 
-cd ../Samples
-rmdir /S /Q build
-rmdir /S /Q dist
+cd ..
+rmdir /S /Q Bin
 
-call clean_unity_project.bat Bilboard
-call clean_unity_project.bat Bilboard_AMF
-call clean_unity_project.bat Sphere_AMF
-call clean_unity_project.bat SkySphere
-call clean_unity_project.bat SkySphere_AMF
-call clean_unity_project.bat MultySceneSample
+cd Scripts/Samples
+call clean_unity_project.bat %cd%/../../Samples/VideoPlayBackSample
 
 cd %curDir%
