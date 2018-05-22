@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DataManager : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class DataManager : MonoBehaviour
     void Start()
     {
         string[] args = System.Environment.GetCommandLineArgs();
+        string scene = "";
 
         for (int i = 0; i < args.Length; i++)
         {
@@ -26,6 +28,10 @@ public class DataManager : MonoBehaviour
             else if (args[i] == "-v360" && i < args.Length - 1)
             {
                 _360videoList.Add(args[i + 1]);
+            }
+            else if (args[i] == "-scene" && i < args.Length - 1)
+            {
+                scene = args[i + 1];
             }
         }
         
@@ -47,6 +53,10 @@ public class DataManager : MonoBehaviour
 
 
         PrintValues(_text);
+        if (scene != "")
+        {
+            SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        }
     }
 
     void Awake()

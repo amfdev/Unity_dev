@@ -581,7 +581,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 0
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
 --- !u!1 &614875511
@@ -803,6 +803,66 @@ Prefab:
       propertyPath: _controllerHolder
       value: 
       objectReference: {fileID: 396509125}
+    - target: {fileID: 224820621911937464, guid: 66f44864349d97d45880b8bbe6229243,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224820621911937464, guid: 66f44864349d97d45880b8bbe6229243,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224820621911937464, guid: 66f44864349d97d45880b8bbe6229243,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224820621911937464, guid: 66f44864349d97d45880b8bbe6229243,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224820621911937464, guid: 66f44864349d97d45880b8bbe6229243,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224820621911937464, guid: 66f44864349d97d45880b8bbe6229243,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224951525912212932, guid: 66f44864349d97d45880b8bbe6229243,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224951525912212932, guid: 66f44864349d97d45880b8bbe6229243,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224951525912212932, guid: 66f44864349d97d45880b8bbe6229243,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224951525912212932, guid: 66f44864349d97d45880b8bbe6229243,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224951525912212932, guid: 66f44864349d97d45880b8bbe6229243,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224951525912212932, guid: 66f44864349d97d45880b8bbe6229243,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 66f44864349d97d45880b8bbe6229243, type: 2}
   m_IsPrefabParent: 0
